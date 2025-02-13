@@ -38,12 +38,13 @@ def get_agent():
     )
 
 def analyze_image(image_path):
-    """Run AI analysis on the given image"""
+    """Run AI analysis on the given image with baby-friendly context"""
     agent = get_agent()
-    with st.spinner('🔍 Analyzing image...'):
-        response = agent.run("Analyze the given image", images=[image_path])
+    with st.spinner('🔍 Analyzing image for postpartum & baby safety...'):
+        response = agent.run("Analyze the given food or ingredient image for a new mom and her baby.", images=[image_path])
         st.success("✅ Analysis Complete!")
         st.markdown(response.content)
+
 
 def save_uploaded_file(uploaded_file):
     """Save uploaded file temporarily"""
